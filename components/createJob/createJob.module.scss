@@ -1,0 +1,40 @@
+@import 'styles/variables.scss';
+
+.container {
+  width: $lg;
+  height: 4rem;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.jobNameContainer {
+  width: 75%;
+}
+.jobName {
+  width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+.priorityContainer {
+  width: 10rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.selectPriority {
+  width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+.ButtonContainer {
+  width: 6rem;
+  align-self: flex-end;
+}
+.createButton {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+}
