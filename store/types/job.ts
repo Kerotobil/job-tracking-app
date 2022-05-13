@@ -1,6 +1,6 @@
 import { ThunkDispatch } from "redux-thunk";
 
-export type Priority = "Urgent" | "Regularly" | "Trivial";
+export type Priority = "Urgent" | "Regularly" | "Important";
 
 export type Job = {
     text: string;

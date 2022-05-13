@@ -16,7 +16,7 @@ export const CreateJob = () => {
     const priority: { type: Priority, text: string }[] = [
         { type: "Urgent", text: "Acil" },
         { type: "Regularly", text: "Normal" },
-        { type: "Trivial", text: "Önemsiz" }
+        { type: "Important", text: "Önemli" }
     ];
 
     return (
