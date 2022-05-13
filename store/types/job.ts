@@ -1,19 +1,6 @@
 import { ThunkDispatch } from "redux-thunk";
 
-interface Urgent {
-    sira: 0
-    text: "acil"
-}
-interface Regularly {
-    sira: 1
-    text: "normal"
-}
-interface Trivial {
-    sira: 2
-    text: "önemsiz"
-}
-
-type Priority = Urgent | Regularly | Trivial;
+export type Priority = "Urgent" | "Regularly" | "Trivial";
 
 export type Job = {
     text: string;
