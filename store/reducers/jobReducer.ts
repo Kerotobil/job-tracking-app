@@ -11,6 +11,13 @@ const jobReducer = (state: JobState = defaultState, action: JobActions): JobStat
             state.item.push(action.payload)
             return { ...state }
         }
+        case "UPDATE_JOB": {
+            const itemIndex = state.item.findIndex(
+                (item) => item.text == action.payload.text
+            );
+            state.item[itemIndex].priority = action.payload.priority;
+            return { ...state }
+        }
         default:
             return state;
     }

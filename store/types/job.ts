@@ -11,12 +11,16 @@ export interface AddJob {
     type: "ADD_JOB"
     payload: Job;
 }
+export interface UpdateJob {
+    type: "UPDATE_JOB"
+    payload: Job;
+}
 
 export interface JobState {
     item: Job[];
 }
 
-export type JobActions = AddJob;
+export type JobActions = AddJob | UpdateJob;
 
 export type ListAction = JobActions;
 export type ListDispatch = ThunkDispatch<JobState, void, ListAction>
