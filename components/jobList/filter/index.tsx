@@ -8,9 +8,9 @@ interface Props {
   priorityFilter: (e: Priority | undefined) => void;
 }
 const priority: { type: Priority; text: string }[] = [
-  { type: 'Urgent', text: 'Acil' },
-  { type: 'Regularly', text: 'Normal' },
-  { type: 'Important', text: 'Önemli' },
+  { type: 'Urgent', text: 'Urgent' },
+  { type: 'Regularly', text: 'Regularly' },
+  { type: 'Important', text: 'Important' },
 ];
 
 export const TextFilter = (props: Props) => {
@@ -30,6 +30,7 @@ export const TextFilter = (props: Props) => {
       <div className={styles.FormContainer}>
         <TextField
           value={text}
+          placeholder={'Find Job'}
           onChange={(e) => setText(e.target.value)}
           className={styles.textFieldContainer}
           size="small"
