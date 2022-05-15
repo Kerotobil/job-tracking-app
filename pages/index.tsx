@@ -2,11 +2,14 @@ import type { NextPage } from 'next';
 import { useState } from 'react';
 import { CreateJob } from '../components/createJob';
 import { JobList } from '../components/jobList';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../store';
 import { Job } from '../store/types/job';
 import { EditModal } from '../components/modals/edit';
 import styles from '../styles/index.module.scss';
+import { updateJob } from '../store/actions/updateJob';
+import { deleteJob } from '../store/actions/deleteJob';
+import { DeleteModal } from '../components/modals/delete';
 
 const Home: NextPage = () => {
   const [editModal, setEditModal] = useState(false);
@@ -15,6 +18,8 @@ const Home: NextPage = () => {
   const [actionItem, setActionItem] = useState<Job>();
 
   const jobList = useSelector((state: AppState) => state.job);
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -39,7 +44,24 @@ const Home: NextPage = () => {
             cancelEvent={() => {
               setEditModal(false);
             }}
-            saveEvent={() => {}}
+            saveEvent={(e) => {
+              dispatch(updateJob({ item: { type: 'UPDATE_JOB', payload: { text: actionItem.text, priority: e } } }));
+              setEditModal(false);
+            }}
+          />
+        </div>
+      ) : null}
+      {deleteModal && actionItem != null ? (
+        <div className={styles.modal}>
+          <DeleteModal
+            job={actionItem}
+            cancelEvent={() => {
+              setDeleteModal(false);
+            }}
+            saveEvent={() => {
+              actionItem && dispatch(deleteJob({ item: { type: 'DELETE_JOB', payload: actionItem } }));
+              setDeleteModal(false);
+            }}
           />
         </div>
       ) : null}
