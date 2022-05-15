@@ -1,15 +1,21 @@
 import styles from './actions.module.scss';
-export const Actions = () => {
+
+interface Props {
+  editEvent: () => void;
+  deleteEvent: () => void;
+}
+
+export const Actions = (props: Props) => {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.icon}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          style={{ width: '1.5rem', height: '1.5rem' }}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
+          onClick={() => props.editEvent()}
         >
           <path
             strokeLinecap="round"
@@ -18,7 +24,7 @@ export const Actions = () => {
           />
         </svg>
       </div>
-      <div>
+      <div className={styles.icon}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           style={{ width: '1.5rem', height: '1.5rem' }}
@@ -26,6 +32,7 @@ export const Actions = () => {
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
+          onClick={() => props.deleteEvent()}
         >
           <path
             strokeLinecap="round"

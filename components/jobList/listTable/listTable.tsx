@@ -4,6 +4,8 @@ import styles from './listTable.module.scss';
 
 interface Props {
   job: Job[];
+  editEvent: (item: Job) => void;
+  deleteEvent: (item: Job) => void;
 }
 
 export const ListTable = (props: Props) => {
@@ -18,7 +20,13 @@ export const ListTable = (props: Props) => {
       </thead>
       <tbody>
         {props.job.map((item, index) => (
-          <ListItem index={index} jobName={item.text} priority={item.priority} />
+          <ListItem
+            key={index}
+            index={index}
+            job={item}
+            editEvent={(e) => props.editEvent(e)}
+            deleteEvent={(e) => props.deleteEvent(e)}
+          />
         ))}
       </tbody>
     </table>

@@ -6,13 +6,15 @@ import styles from './jobList.module.scss';
 
 interface Props {
   jobList: Job[];
+  editEvent: (item: Job) => void;
+  deleteEvent: (item: Job) => void;
 }
 export const JobList = (props: Props) => {
   const [textFilter, setTextFilter] = useState<string>();
   const [sortPriority, setSortPriority] = useState<Priority>();
   return (
     <div className={styles.pageContainer}>
-      <ListTable job={props.jobList} />
+      <ListTable job={props.jobList} editEvent={(e) => props.editEvent(e)} deleteEvent={(e) => props.deleteEvent(e)} />
     </div>
   );
 };
