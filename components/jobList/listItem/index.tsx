@@ -1,4 +1,5 @@
 import { Priority } from '../../../store/types/job';
+import { Actions } from './actions';
 import styles from './listItem.module.scss';
 
 interface Props {
@@ -26,7 +27,9 @@ export const ListItem = (props: Props) => {
           {props.priority}
         </div>
       </th>
-      <th>{}</th>
+      <th>
+        <Actions />
+      </th>
     </tr>
   );
 };
