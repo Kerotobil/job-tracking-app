@@ -10,6 +10,7 @@ import styles from '../styles/index.module.scss';
 import { updateJob } from '../store/actions/updateJob';
 import { deleteJob } from '../store/actions/deleteJob';
 import { DeleteModal } from '../components/modals/delete';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   const [editModal, setEditModal] = useState(false);
@@ -23,6 +24,9 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>Job Tracking App</title>
+      </Head>
       <div className={`${styles.page} ${editModal || deleteModal ? styles.deneme : ''}`}>
         <CreateJob />
         <JobList
