@@ -18,6 +18,9 @@ const jobReducer = (state: JobState = defaultState, action: JobActions): JobStat
             state.item[itemIndex].priority = action.payload.priority;
             return { ...state }
         }
+        case "DELETE_JOB": {
+            return { ...state, item: state.item.filter(e => e.text != action.payload.text) }
+        }
         default:
             return state;
     }
