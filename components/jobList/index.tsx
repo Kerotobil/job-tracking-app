@@ -11,34 +11,8 @@ interface Props {
   deleteEvent: (item: Job) => void;
 }
 export const JobList = (props: Props) => {
-  const [viewList, setViewList] = useState(props.jobList);
-  const [list, setList] = useState(props.jobList);
-
   const [textFilter, setTextFilter] = useState<string>();
   const [priorityFilter, setPriorityFilter] = useState<string>();
-
-  useEffect(() => {
-    setViewList(list);
-    console.log('list');
-    console.log(list);
-  }, [list]);
-
-  useEffect(() => {
-    if (textFilter != undefined || priorityFilter != undefined) {
-      console.log(priorityFilter);
-      setList(
-        props.jobList.filter((item) =>
-          !!textFilter
-            ? item.text.includes(textFilter)
-            : true && !!priorityFilter
-            ? item.priority == priorityFilter
-            : true
-        )
-      );
-    }
-  }, [textFilter, priorityFilter]);
-
-  useEffect(() => {}, [viewList]);
 
   const sort = (array: Job[]) => {
     array = sortBy(array, (item) => {
@@ -51,9 +25,9 @@ export const JobList = (props: Props) => {
     });
     return array;
   };
-
+  console.log(props.jobList.length);
   return (
-    <div className={styles.pageContainer}>
+    <div key={props.jobList.length} className={styles.pageContainer}>
       <h1 className={styles.title}>Job List</h1>
       <TextFilter
         textFilter={(e) => {
@@ -63,7 +37,19 @@ export const JobList = (props: Props) => {
           setPriorityFilter(e);
         }}
       />
-      <ListTable job={sort(viewList)} editEvent={(e) => props.editEvent(e)} deleteEvent={(e) => props.deleteEvent(e)} />{' '}
+      <ListTable
+        job={sort(
+          props.jobList.filter((item) =>
+            !!textFilter
+              ? item.text.includes(textFilter)
+              : true && !!priorityFilter
+              ? item.priority == priorityFilter
+              : true
+          )
+        )}
+        editEvent={(e) => props.editEvent(e)}
+        deleteEvent={(e) => props.deleteEvent(e)}
+      />
     </div>
   );
 };
