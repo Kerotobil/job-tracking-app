@@ -25,27 +25,3 @@
 .ActionTitle {
   text-align: center;
 }
-
-.jobNameItem {
-  text-align: left;
-  font-weight: normal;
-  padding: 1rem 1rem;
-}
-
-.priorityItem {
-  text-align: center;
-  font-weight: normal;
-  color: white;
-  border-radius: 0.25rem;
-  max-width: 6rem;
-  padding: 0.5rem 0.5rem;
-}
-.priorityItemUrgent {
-  background-color: #dc2626;
-}
-.priorityItemImportant {
-  background-color: #ea580c;
-}
-.priorityItemRegularly {
-  background-color: #0891b2;
-}

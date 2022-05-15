@@ -1,4 +1,5 @@
 import { Job } from '../../../store/types/job';
+import { ListItem } from '../listItem';
 import styles from './listTable.module.scss';
 
 interface Props {
@@ -17,25 +18,7 @@ export const ListTable = (props: Props) => {
       </thead>
       <tbody>
         {props.job.map((item, index) => (
-          <tr className={`${styles.tbodyItem} ${index % 2 == 1 ? `${styles.tbodyItemOdd}` : ''}`} key={index}>
-            <th className={styles.jobNameItem}>{item.text}</th>
-            <th>
-              <div
-                className={`${styles.priorityItem} ${
-                  item.priority == 'Urgent'
-                    ? `${styles.priorityItemUrgent}`
-                    : item.priority == 'Important'
-                    ? `${styles.priorityItemImportant}`
-                    : item.priority == 'Regularly'
-                    ? `${styles.priorityItemRegularly}`
-                    : null
-                }`}
-              >
-                {item.priority}
-              </div>
-            </th>
-            <th>{}</th>
-          </tr>
+          <ListItem index={index} jobName={item.text} priority={item.priority} />
         ))}
       </tbody>
     </table>
