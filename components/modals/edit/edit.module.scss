@@ -1,0 +1,49 @@
+.container {
+  width: 32rem;
+  display: inline-block;
+  vertical-align: bottom;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.25rem;
+  text-align: left;
+  overflow: hidden;
+  filter: brightness(1);
+}
+.jobNameContainer {
+  width: 75%;
+}
+.jobName {
+  width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+.priorityContainer {
+  width: 10rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+}
+.selectPriority {
+  width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+.ButtonContainer {
+  width: 50%;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 1rem;
+  justify-content: space-around;
+}
+.createButton {
+  width: 70%;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
