@@ -1,14 +1,22 @@
-import type { NextPage } from 'next'
-import { CreateJob } from '../components/createJob'
-import { JobList } from '../components/jobList'
+import type { NextPage } from 'next';
+import { useState } from 'react';
+import { CreateJob } from '../components/createJob';
+import { JobList } from '../components/jobList';
+import { useSelector } from 'react-redux';
+import { AppState } from '../store';
 
 const Home: NextPage = () => {
-  return (
-    <div >
-      <CreateJob />
-      <JobList />
-    </div>
-  )
-}
+  const [editModal, setEditModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false);
 
-export default Home
+  const jobList = useSelector((state: AppState) => state.job);
+
+  return (
+    <div>
+      <CreateJob />
+      <JobList jobList={jobList.item} />
+    </div>
+  );
+};
+
+export default Home;
