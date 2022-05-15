@@ -1,0 +1,28 @@
+.container {
+  width: 24rem;
+  display: inline-block;
+  vertical-align: bottom;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
+  text-align: left;
+  overflow: hidden;
+  filter: brightness(1);
+}
+
+.modalQuestion {
+  font-weight: 500;
+}
+
+.ButtonContainer {
+  width: 50%;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
