@@ -1,7 +1,7 @@
 @import 'styles/variables.scss';
 
 .container {
-  width: $lg;
+  max-width: $lg;
   height: 4rem;
   margin-top: 12px;
   margin-left: auto;
@@ -37,4 +37,44 @@
   width: 100%;
   height: 2rem;
   margin-bottom: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+  }
+  .jobNameContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .jobName {
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.5rem;
+  }
+  .priorityContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .selectPriority {
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .ButtonContainer {
+    width: 6rem;
+    margin-top: 1rem;
+    align-self: center;
+  }
+  .createButton {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
 }

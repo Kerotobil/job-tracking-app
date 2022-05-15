@@ -25,3 +25,30 @@
 .ActionTitle {
   text-align: center;
 }
+@media only screen and (max-width: 768px) {
+  .TableContainer {
+    width: 100%;
+  }
+
+  .tbodyItem {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .tbodyItemOdd {
+    background-color: #f3f4f6;
+  }
+
+  .jobNameTitle {
+    width: 50%;
+    text-align: left;
+  }
+
+  .priotityTitle {
+    width: 20%;
+    text-align: left;
+  }
+
+  .ActionTitle {
+    text-align: center;
+  }
+}

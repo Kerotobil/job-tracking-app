@@ -22,3 +22,55 @@
   background-color: white;
   border-radius: 0.25rem;
 }
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    width: 100%;
+    background-color: rgb(161, 200, 202);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .FormContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0.5rem;
+  }
+  .textFieldContainer {
+    width: 50%;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+  .selectContainer {
+    width: 22rem;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    background-color: rgb(161, 200, 202);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .FormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5rem 0.5rem;
+  }
+  .textFieldContainer {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+  .selectContainer {
+    width: 12rem;
+    margin-top: 0.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+}
