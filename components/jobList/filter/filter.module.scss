@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+
+.container {
+  width: $xl;
+  background-color: rgb(161, 200, 202);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.FormContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0.5rem;
+}
+.textFieldContainer {
+  width: 70%;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+.selectContainer {
+  width: 12rem;
+  background-color: white;
+  border-radius: 0.25rem;
+}
