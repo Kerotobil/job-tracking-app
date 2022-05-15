@@ -16,16 +16,14 @@ export const EditModal = (props: Props) => {
     priority: props.job?.priority,
   });
   const priority: { type: Priority; text: string }[] = [
-    { type: 'Urgent', text: 'Acil' },
-    { type: 'Regularly', text: 'Normal' },
-    { type: 'Important', text: 'Önemli' },
+    { type: 'Urgent', text: 'Urgent' },
+    { type: 'Regularly', text: 'Regularly' },
+    { type: 'Important', text: 'Important' },
   ];
   return (
     <div className={styles.container}>
       <div>
-        <div>
-          <h1>Job Edit</h1>
-        </div>
+        <h1 className={styles.modalTitle}>Job Edit</h1>
       </div>
 
       <Formik
@@ -36,7 +34,7 @@ export const EditModal = (props: Props) => {
       >
         {(formikProps) => (
           <Form>
-            <div className={styles.container}>
+            <div className={styles.formContainer}>
               <div className={styles.jobNameContainer}>
                 <div>
                   <label>{'Job Name'}</label>
@@ -70,7 +68,7 @@ export const EditModal = (props: Props) => {
                 </FormControl>
               </div>
               <div className={styles.ButtonContainer}>
-                <Button onClick={() => props.cancelEvent()} className={styles.createButton} variant="contained">
+                <Button onClick={() => props.cancelEvent()} className={styles.createButton} variant="outlined">
                   Cancel
                 </Button>
                 <Button type="submit" className={styles.createButton} variant="contained">
