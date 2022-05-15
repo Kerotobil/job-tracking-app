@@ -2,6 +2,13 @@
   "name": "job-tracking-app",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "react",
+    "sass",
+    "redux-thunk",
+    "nextjs"
+  ],
+  "description": "Create to-do list in order of importance. The order of importance can be updated. You can delete the job after you're done ",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
