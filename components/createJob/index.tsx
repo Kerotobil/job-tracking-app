@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addJob } from '../../store/actions/addJob';
 import { Priority } from '../../store/types/job';
 import styles from './createJob.module.scss';
+import * as yup from 'yup';
 
 export const CreateJob = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ export const CreateJob = () => {
   return (
     <Formik
       initialValues={form}
+      validationSchema={yup.object().shape({
+        jobName: yup.string().required('Required').max(255),
+      })}
       onSubmit={(values) => {
         console.log(values);
         dispatch(addJob({ item: { type: 'ADD_JOB', payload: { text: values.jobName, priority: values.priority } } }));
