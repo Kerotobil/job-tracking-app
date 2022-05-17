@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+
 .container {
   display: flex;
   flex: auto;
@@ -13,7 +15,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $md) {
   .container {
     display: flex;
     width: 50%;
