@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CreateJob } from '../components/createJob';
 import { JobList } from '../components/jobList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,14 @@ import { updateJob } from '../store/actions/updateJob';
 import { deleteJob } from '../store/actions/deleteJob';
 import { DeleteModal } from '../components/modals/delete';
 import Head from 'next/head';
+import { RankList } from '../components/types';
+import { getPriortiy } from '../helpers/axios-api-client';
+
+const priority: RankList = {
+  Urgent: 1,
+  Important: 2,
+  Regularly: 3,
+};
 
 const Home: NextPage = () => {
   const [editModal, setEditModal] = useState(false);
@@ -22,6 +30,18 @@ const Home: NextPage = () => {
 
   const dispatch = useDispatch();
 
+  const [sortRankList, setSortRankList] = useState<RankList>(priority);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const priorityData = await getPriortiy();
+      priorityData && setSortRankList(priorityData);
+      console.log('priorityData');
+      console.log(priorityData.priority);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
       <Head>
@@ -30,6 +50,7 @@ const Home: NextPage = () => {
       <div className={`${styles.page} ${editModal || deleteModal ? styles.deneme : ''}`}>
         <CreateJob />
         <JobList
+          sortRankList={sortRankList}
           jobList={jobList.item}
           editEvent={(event) => {
             setActionItem(event);
