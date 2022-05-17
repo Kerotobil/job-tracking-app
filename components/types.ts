@@ -1,5 +1,5 @@
 export type RankList = {
-    Urgent: number;
-    Important: number;
-    Regularly: number;
-}
+  Urgent: number;
+  Important: number;
+  Regularly: number;
+};

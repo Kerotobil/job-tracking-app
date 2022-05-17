@@ -1,9 +1,9 @@
-import { UpdateJob } from "../types/job"
+import { UpdateJob } from '../types/job';
 
 type Props = {
-    item: UpdateJob;
-}
+  item: UpdateJob;
+};
 
 export const updateJob = (props: Props) => {
-    return { type: props.item.type, payload: props.item.payload }
-}
+  return { type: props.item.type, payload: props.item.payload };
+};
