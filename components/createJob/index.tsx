@@ -27,7 +27,6 @@ export const CreateJob = () => {
         jobName: yup.string().required('Required').max(255),
       })}
       onSubmit={(values) => {
-        console.log(values);
         dispatch(addJob({ item: { type: 'ADD_JOB', payload: { text: values.jobName, priority: values.priority } } }));
       }}
     >

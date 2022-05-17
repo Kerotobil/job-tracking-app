@@ -36,8 +36,6 @@ const Home: NextPage = () => {
     const fetchData = async () => {
       const priorityData = await getPriortiy();
       priorityData && setSortRankList(priorityData);
-      console.log('priorityData');
-      console.log(priorityData.priority);
     };
     fetchData();
   }, []);

@@ -1,6 +1,5 @@
 import { FormControl, MenuItem, Select, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { string } from 'yup';
 import { Priority } from '../../../store/types/job';
 import styles from './filter.module.scss';
 interface Props {
